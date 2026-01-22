@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # A simple deploy script for Strettch Cloud Beta
-
 # Author: Yves Isite
-
-# Let me check if running as root
+# We check if running as root
 
 if [ "$EUID" -ne 0 ]; then
 
@@ -57,23 +55,14 @@ fi
 cat <<EOF > /var/www/html/index.html
 
 <!DOCTYPE html>
-
 <html>
-
 <body style="background: #111; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh;">
-
 <div style="border: 1px solid #444; padding: 2rem; border-radius: 8px;">
-
 <h2>Deployment Successful</h2>
-
 <p>This instance is now running on <strong>Strettch Cloud</strong>.</p>
-
 <p>Server Time: $(date)</p>
-
 </div>
-
 </body>
-
 </html>
 
 EOF
